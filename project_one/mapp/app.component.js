@@ -15,7 +15,6 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'first-app',
-            // template: 'abc',
             templateUrl: 'template/app.template.html',
             styles: [""],
             styleUrls: ["template/app.style.css"]
