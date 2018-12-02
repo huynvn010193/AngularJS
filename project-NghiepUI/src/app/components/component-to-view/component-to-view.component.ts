@@ -16,6 +16,12 @@ export class ComponentToViewComponent implements OnInit {
   }
   public imgWidth: number = 500;
   public isValid: boolean = true;
+  public tbWidth: number = 500;
+  public tbBorder: number = 1;
+  public isBorder: boolean = true;
+  public isChecked: number = 1; // 1: add Class, 0: remove class
+  public isSpecical: boolean = true;
+  public size: number = 24;
 
   constructor() { }
 
@@ -29,5 +35,4 @@ export class ComponentToViewComponent implements OnInit {
   public imgLink : string = './../assets/image/matroi.png';
   public textLink: string = 'Go to Zing.vn';
   public link : string='http://news.zing.vn/';
-  
 }

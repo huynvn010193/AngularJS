@@ -17,3 +17,40 @@
 	>Đăng nhập
 </button>
 <img bind-src="imgLink" [alt]="'Hình ảnh đẹp'" width="200"/><hr/>
+<table [attr.border]="tbBorder" [attr.width]="tbWidth">
+	<tr>
+		<td>ID</td>
+		<td>Họ tên</td>
+		<td>SDT</td>
+	</tr>
+	<tr>
+			<td>1</td>
+			<td>ABC</td>
+			<td>123456</td>
+		</tr>
+</table>
+<hr/>
+<h2>Class Binding</h2>
+<table [class.table-bordered]="isBorder" width="500">
+	<tr>
+		<td>ID</td>
+		<td>Họ tên</td>
+		<td>SDT</td>
+	</tr>
+	<tr>
+			<td>1</td>
+			<td>ABC</td>
+			<td>123456</td>
+		</tr>
+</table>
+
+<span 
+	class="label" [class.label-danger]="isChecked === 1"
+	[class.label-success]="isChecked !== 1"
+>Label</span>
+
+<div 
+	[style.background-color]="isSpecical ? 'red':'cyan'" 
+	[style.color]="'white'"
+	[style.font-size.px]="size"
+>Lập trình Angular 4</div>
