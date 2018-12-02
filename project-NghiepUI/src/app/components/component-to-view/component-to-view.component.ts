@@ -14,6 +14,8 @@ export class ComponentToViewComponent implements OnInit {
     age: 22,
     isMarried: false
   }
+  public imgWidth: number = 500;
+  public isValid: boolean = true;
 
   constructor() { }
 
@@ -27,4 +29,5 @@ export class ComponentToViewComponent implements OnInit {
   public imgLink : string = './../assets/image/matroi.png';
   public textLink: string = 'Go to Zing.vn';
   public link : string='http://news.zing.vn/';
+  
 }
