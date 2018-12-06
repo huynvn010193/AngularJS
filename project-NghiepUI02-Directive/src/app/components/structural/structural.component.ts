@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class StructuralComponent implements OnInit {
   public isShow: boolean = true;
   public username: string = 'huyNVN';
+  public isChecked: boolean = false;
+  public age: number;
+
   constructor() { }
 
   ngOnInit() {
@@ -15,5 +18,9 @@ export class StructuralComponent implements OnInit {
 
   onToggle(){
     this.isShow = !this.isShow;
+  }
+
+  onChange(value){
+    this.isChecked = value;
   }
 }
