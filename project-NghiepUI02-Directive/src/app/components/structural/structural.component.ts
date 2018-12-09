@@ -11,6 +11,12 @@ export class StructuralComponent implements OnInit {
   public isChecked: boolean = false;
   public age: number;
 
+  public names : string[] = ['TPHCM','Hà Nội','Vĩnh Long','Long An'];
+  public products : any[] = [{
+    id: 1,
+    name: 'Iphone 6 plus',
+    image: './../assets/image/ip6.jpg';
+  }]
   constructor() { }
 
   ngOnInit() {
