@@ -12,11 +12,28 @@ export class StructuralComponent implements OnInit {
   public age: number;
 
   public names : string[] = ['TPHCM','Hà Nội','Vĩnh Long','Long An'];
-  public products : any[] = [{
-    id: 1,
-    name: 'Iphone 6 plus',
-    image: './../assets/image/ip6.jpg';
-  }]
+  public products : any[] = [
+    {
+      id: 1,
+      name: 'Iphone 6 plus',
+      price: 800000
+    },
+    {
+      id: 2,
+      name: 'Iphone SX max',
+      price: 900000
+    },
+    {
+      id: 3,
+      name: 'Galaxy S9',
+      price: 200000
+    },
+    {
+      id: 4,
+      name: 'Nokia',
+      price: 500000
+    },
+  ]
   constructor() { }
 
   ngOnInit() {
