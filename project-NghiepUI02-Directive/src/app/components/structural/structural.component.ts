@@ -11,8 +11,12 @@ export class StructuralComponent implements OnInit {
   public isChecked: boolean = false;
   public age: number;
 
-  public names : string[] = ['TPHCM','Hà Nội','Vĩnh Long','Long An'];
+  public names : string[] = ['TPHCM','Hà Nội'];
   public products : any[] = [
+    
+  ]
+
+  public productsFromServer : any[] = [
     {
       id: 1,
       name: 'Iphone 6 plus',
@@ -34,6 +38,8 @@ export class StructuralComponent implements OnInit {
       price: 500000
     },
   ]
+
+
   constructor() { }
 
   ngOnInit() {
@@ -45,5 +51,14 @@ export class StructuralComponent implements OnInit {
 
   onChange(value){
     this.isChecked = value;
+  }
+
+  onLoadData(){
+    this.products = this.productsFromServer;
+  }
+
+  myTrackByFunction(index,item){
+    // console.log(index);
+    return item.id;
   }
 }

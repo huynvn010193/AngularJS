@@ -33,33 +33,50 @@
   <li class="list-group-item" *ngFor="let item of names">{{item}}</li>
 </ul>
 
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>STT</th>
-      <th>Tên</th>
-      <th>Giá</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr 
-      *ngFor="let item of products; 
-        let i = index
-        let f = first
-        let l = last
-        let e = even
-        let o = odd
-        "
-        [style.background-color]="f===true ? 'gray':'white'"
-        [style.background-color]="(l===true) ? 'cyan':(f === true? 'gray':'white')"
-        [style.background-color]="e === true ? 'red':'blue'"
-        [style.background-color]="o === true ? 'yellow':'red'"
-      >
-      <td>{{i + 1}} {{f}}</td>
-      <td>{{item.name}}</td>
-      <td>{{item.price}} VND</td>
-    </tr>
-  </tbody>
-</table>
+<ul class="list-group">
+  <ng-template ngFor let-item [ngForOf]="names" let-i="index" led-odd="odd" [ngForTrackBy]="trackById">
+    <li class="list-group-item">{{item}}</li>
+  </ng-template>
+</ul>
+
+<ng-container *ngIf="products.length > 0; else elseNoProduct">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Giá</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr 
+        *ngFor="let item of products; 
+          let i = index
+          let f = first
+          let l = last
+          let e = even
+          let o = odd
+          trackBy:myTrackByFunction
+          "
+          [style.background-color]="f===true ? 'gray':'white'"
+          [style.background-color]="(l===true) ? 'cyan':(f === true? 'gray':'white')"
+          [style.background-color]="e === true ? 'red':'blue'"
+          [style.background-color]="o === true ? 'yellow':'red'"
+        >
+        <td>{{i + 1}} {{f}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}} VND</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #elseNoProduct>
+  <h1>Không còn sản phẩm</h1>
+</ng-template>
+
+<button type="button" class="btn btn-warning" (click)="onLoadData()">
+  Lấy dữ liệu sever
+</button>
 
 
