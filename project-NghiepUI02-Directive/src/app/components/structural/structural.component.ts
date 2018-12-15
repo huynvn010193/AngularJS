@@ -12,9 +12,30 @@ export class StructuralComponent implements OnInit {
   public age: number;
 
   public names : string[] = ['TPHCM','Hà Nội'];
-  public products : any[] = [
-    
-  ]
+  public products : any[] = []
+
+  public users : any[] = [
+    {
+      name: 'John Smit',
+      country: 'USA'
+    },
+    {
+      name: 'huynvn',
+      country: 'Viet Nam'
+    },
+    {
+      name: 'John_Cena',
+      country: 'USA'
+    },
+    {
+      name: 'Beckam',
+      country: 'London'
+    },
+    {
+      name: 'ABC',
+      country: 'Lao'
+    },
+  ];
 
   public productsFromServer : any[] = [
     {

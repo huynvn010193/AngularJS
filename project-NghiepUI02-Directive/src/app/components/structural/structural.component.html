@@ -78,5 +78,35 @@
 <button type="button" class="btn btn-warning" (click)="onLoadData()">
   Lấy dữ liệu sever
 </button>
+<hr/>
 
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of users">
+    <span class="text-danger" *ngIf="user.country === 'Viet Nam'">{{user.name}} - {{user.country}}</span>
+    <span class="text-primary" *ngIf="user.country === 'USA'">{{user.name}} - {{user.country}}</span>
+    <span *ngIf="user.country !== 'USA' && user.coutry !=='Viet Name'">{{user.name}} - {{user.country}}</span>
+  </li>
+</ul>
 
+<hr/>
+<h3>ngSwitchCase</h3>
+
+<ul class="list-group">
+  <li 
+    class="list-group-item" 
+    *ngFor="let user of users"
+    [ngSwitch]="user.country"
+  >
+    <span *ngSwitchCase="'Viet Nam'" class="text-danger">
+      {{user.name}} - {{user.country}}
+    </span>
+
+    <span *ngSwitchCase="'USA'" class="text-primary">
+      {{user.name}} - {{user.country}}
+    </span>
+
+    <span *ngSwitchDefault>
+      {{user.name}} - {{user.country}}
+    </span>
+  </li>
+</ul>
