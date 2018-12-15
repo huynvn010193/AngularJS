@@ -1,0 +1,48 @@
+<h3 
+  [class.pd-10]="true"
+  [class.cl-red]="true"
+  [class.border-blue]="true"
+>
+  hello world
+</h3>
+
+<hr/>
+<p>Sử dụng ngClass</p>
+
+<!-- <h3 
+  [ngClass]="['pd-10','cl-red','border-blue']"
+  [ngClass]="{'pd-10' : isSpecial === true}"
+  
+>
+  hello world
+</h3> -->
+
+<!-- <p>Special: {{isSpecial}}</p>
+
+<h3 
+  [ngClass]="{
+    'border-blue' : isSpecial,
+    'pd-10': isSpecial,
+    'cl-red': isSpecial,
+    'border-yellow': !isSpecial
+  }"
+>
+  hello world
+</h3>
+
+<button type="button" class="btn btn-danger" (click)="onToggleSpecial()">
+  Toggle Button
+</button> -->
+
+<p>Special: {{isSpecial}}</p>
+
+<h3 
+  [ngClass]="setClasses()"
+>
+  hello world
+</h3>
+
+<button type="button" class="btn btn-danger" (click)="onToggleSpecial()">
+  Toggle Button
+</button>
+
