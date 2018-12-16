@@ -18,6 +18,14 @@ export class AttributeComponent implements OnInit {
     }
   }
 
+  setStyle(){
+    return {
+      'border': this.isSpecial ? 'solid 2px blue' : '',
+      'padding.px': this.isSpecial ? '10':'',
+      'color': this.isSpecial ? 'red':''
+    }
+  }
+
   onToggleSpecial(){
     this.isSpecial = !this.isSpecial;
   }
