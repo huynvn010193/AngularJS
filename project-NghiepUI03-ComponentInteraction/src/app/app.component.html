@@ -1,7 +1,17 @@
 <div class="container" [style.margin.px]="30">
 	<div class="row">
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<app-child [married]="isMarried"></app-child>
+			<app-child 
+				married={{isMarried}}
+				age={{age}}
+				[name]="'HuyNVN'"
+				>
+			</app-child>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<user-list
+				[users]="users">
+			</user-list>
 		</div>
 	</div>
 </div>

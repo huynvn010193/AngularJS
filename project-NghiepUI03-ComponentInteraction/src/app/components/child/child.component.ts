@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  
+  @Input('married') isMarried : boolean = false;
+  @Input('age') myAge : number;
+  // @Input('name') name : string;
+  private _name: string;
+
   constructor() { }
-  
   ngOnInit() {
   }
 
+  @Input()
+  set name(name : string){
+    this._name = name;
+  }
+
+  get name(){
+    return this._name;
+  }
 }
