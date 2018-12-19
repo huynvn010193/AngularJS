@@ -25,4 +25,10 @@ export class AppComponent {
       address: 'Đà Nẵng'
     }
   ];
+
+  public txtFullName : string;
+
+  onGetFulname(value){
+    this.txtFullName = value;
+  }
 }

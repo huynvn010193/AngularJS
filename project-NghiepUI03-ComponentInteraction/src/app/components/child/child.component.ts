@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  Input,
+  Output,
+  EventEmitter 
+} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -11,6 +17,12 @@ export class ChildComponent implements OnInit {
   @Input('age') myAge : number;
   // @Input('name') name : string;
   private _name: string;
+  public txtFullName : string;
+  @Output('txtFullName') onHandleFulName = new EventEmitter<string>();
+
+  onSubmitForm(){
+    this.onHandleFulName.emit(this.txtFullName);
+  }
 
   constructor() { }
   ngOnInit() {
