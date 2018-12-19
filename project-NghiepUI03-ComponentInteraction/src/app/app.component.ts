@@ -12,23 +12,29 @@ export class AppComponent {
     {
       id: 1,
       name: 'Nguyễn Văn A',
-      address: 'TPHCM'
+      phone: '13221321'
     },
     {
       id: 2,
       name: 'Trần Văn B',
-      address: 'Long An'
+      phone: '321321321'
     },
     {
       id: 3,
       name: 'Lê Văn Long',
-      address: 'Đà Nẵng'
+      phone: '312321'
     }
   ];
-
+  
   public txtFullName : string;
+  public txtPhone : number;
 
-  onGetFulname(value){
+  onGetFulname(value: string){
     this.txtFullName = value;
   }
+
+  onGetPhone(phone: number){
+    this.txtPhone = phone;
+  }
+  
 }

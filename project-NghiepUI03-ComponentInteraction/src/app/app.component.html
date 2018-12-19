@@ -2,18 +2,23 @@
 	<div class="row">
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 			Dữ liệu từ child-component
-			{{txtFullName}}
+			Họ tên: {{txtFullName}} <br/>
+			Số điện thoại: {{txtPhone}}
 			<app-child 
 				married={{isMarried}}
 				age={{age}}
 				[name]="'HuyNVN'"
 				(txtFullName)="onGetFulname($event)"
+				(txtPhone)="onGetPhone($event)"
 				>
 			</app-child>
 		</div>
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 			<user-list
-				[users]="users">
+				[users]="users"
+				[fullname]="txtFullName"
+				[phone]="txtPhone"
+			>
 			</user-list>
 		</div>
 	</div>

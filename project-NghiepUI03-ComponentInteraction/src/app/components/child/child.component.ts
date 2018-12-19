@@ -18,10 +18,14 @@ export class ChildComponent implements OnInit {
   // @Input('name') name : string;
   private _name: string;
   public txtFullName : string;
+  public txtPhone : number;
+
   @Output('txtFullName') onHandleFulName = new EventEmitter<string>();
+  @Output('txtPhone') onHandlePhone = new EventEmitter<number>();
 
   onSubmitForm(){
     this.onHandleFulName.emit(this.txtFullName);
+    this.onHandlePhone.emit(this.txtPhone);
   }
 
   constructor() { }
