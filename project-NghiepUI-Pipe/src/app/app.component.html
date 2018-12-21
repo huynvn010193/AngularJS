@@ -35,6 +35,30 @@
             <td>{{ name }}</td>
             <td>{{ name | titlecase}}</td>
           </tr>
+          <tr>
+            <td>5</td>
+            <td>Slice</td>
+            <td>{{ title }}</td>
+            <td>{{ title | slice:4:11 }}</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Decimal-Number</td>
+            <td>{{ amount }}</td>
+            <td>{{ amount | number: '1.0-3' }}</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Decimal-Percent</td>
+            <td>{{ result }}</td>
+            <td>{{ result | percent: '1.0-4' }}</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Slice-Array</td>
+            <td>{{ names }}</td>
+            <td>{{ names | slice:2:4 }}</td>
+          </tr>
         </tbody>
       </table>
     </div>

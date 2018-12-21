@@ -15,4 +15,8 @@ export class AppComponent {
               Lorem Ipsum passages, and more recently with desktop publishing software like Aldus 
               PageMaker including versions of Lorem Ipsum.`;
   public name : string = 'lương đình của';
+  public title : string = 'Học angular 4';
+  public amount : number = 35.142567;
+  public result : number = 0.85161321;
+  public names : string[] = ['abc','def','xyz','123','456'];
 }
