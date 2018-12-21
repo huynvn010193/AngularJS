@@ -59,6 +59,18 @@
             <td>{{ names }}</td>
             <td>{{ names | slice:2:4 }}</td>
           </tr>
+          <tr>
+            <td>9</td>
+            <td>Currency</td>
+            <td>{{ total }}</td>
+            <td>{{ total | currency : 'VND': true : '1.0-3' }}</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Date time</td>
+            <td>{{ today }}</td>
+            <td>{{  today | date : 'dd/MM/y hh:mm:ss a'}}</td>
+          </tr>
         </tbody>
       </table>
     </div>
