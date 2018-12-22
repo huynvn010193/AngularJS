@@ -34,8 +34,11 @@ export class AppComponent {
       id : 4,
       name : 'Levono',
       status: true
+    },
+    {
+      id : 21,
+      name : 'Levono',
+      status: true
     }
   ]
-
-
 }

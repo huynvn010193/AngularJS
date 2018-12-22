@@ -31,13 +31,16 @@
               <input type="text" class="form-control" [(ngModel)]="idFilter">
             </td>
             <td>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" [(ngModel)]="nameFilter">
             </td>
-            <td>  
-              <input type="text" class="form-control">
+            <td> 
+              <select name="" class="form-control" [(ngModel)]="statusFilter">
+                <option value="true">Active</option>
+                <option value="false">Deactive</option>
+              </select>
             </td>
           </tr>
-          <tr *ngFor="let item of products | filter">
+          <tr *ngFor="let item of products | filter : idFilter : nameFilter : statusFilter">
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.status ? 'Active' : 'Deactive' }}</td>
