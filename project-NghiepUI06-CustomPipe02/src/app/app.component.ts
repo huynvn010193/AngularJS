@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'project-NghiepUI06-CustomPipe02';
+  public arrNumber = [0, 100, 1, 5, 25, 10];
+  public sortValue = 1;
+  onHandleSort(value){
+    this.sortValue = value;
+  }
 }
