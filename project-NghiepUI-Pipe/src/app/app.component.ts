@@ -21,4 +21,10 @@ export class AppComponent {
   public names : string[] = ['abc','def','xyz','123','456'];
   public total: number = 75.8434;
   public today : Date = new Date();
+  public product : any = {
+    id: 1,
+    name: 'Samsung galaxy s7',
+    price: 15,
+    status: true
+  }
 }

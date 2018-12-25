@@ -71,6 +71,12 @@
             <td>{{ today }}</td>
             <td>{{  today | date : 'dd/MM/y hh:mm:ss a'}}</td>
           </tr>
+          <tr>
+            <td>11</td>
+            <td>Json Pipe</td>
+            <td>{{ product }}</td>
+            <td>{{ product | json | uppercase }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
