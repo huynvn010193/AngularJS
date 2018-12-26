@@ -17,6 +17,16 @@
             </td>
             <td>{{arrNumber | sortNumber :sortValue}}</td>
           </tr>
+          <tr>
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="name"
+              >
+            </td>
+            <td>{{ name | capitalize}}</td>
+          </tr>
         </tbody>
       </table>
     </div>
