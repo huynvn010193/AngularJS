@@ -6,10 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'LifeCycleHook';
+  title = 'App Component';
   public isShowing : boolean = true;
+  public total : number = 0;
+  public a : number;
+  public b : number; 
 
   onToggle(){
     this.isShowing = !this.isShowing;
+  }
+
+  amount(){
+    this.total = Number(this.a) + Number(this.b);
   }
 }

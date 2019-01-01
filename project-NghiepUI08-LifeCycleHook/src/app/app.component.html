@@ -7,9 +7,18 @@
           </div>
           <div class="panel-body">
             <ng-container *ngIf="isShowing">
-              <app-lifecycle-hook></app-lifecycle-hook>
+              <app-lifecycle-hook [total]="total"></app-lifecycle-hook>
             </ng-container>
             <button type="button" class="btn btn-primary" (click)="onToggle()">Toggle</button>
+            <hr/>
+            Số thứ nhất: <input type="number" name="" class="form-control" [(ngModel)]="a">
+            Số thứ hai: <input type="text" name="" class="form-control" [(ngModel)]="b">
+            <button 
+              type="button" 
+              class="btn btn-danger" 
+              (click)="amount()" 
+              [style.margin-top.px]="20"
+            >Tính tổng</button>
           </div>
       </div>
     </div>
