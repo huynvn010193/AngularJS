@@ -11,12 +11,16 @@ export class AppComponent {
   public total : number = 0;
   public a : number;
   public b : number; 
-
+  public content : string ='ngContent';
   onToggle(){
     this.isShowing = !this.isShowing;
   }
 
   amount(){
     this.total = Number(this.a) + Number(this.b);
+  }
+
+  onClick(value){
+    this.content = value;
   }
 }

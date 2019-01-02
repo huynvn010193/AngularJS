@@ -29,16 +29,23 @@
           </div>
           <div class="panel-body">
             <app-order-lifecycle>
-              <h1>Value: ABCDEF</h1>
-              <h2>Value: h2 tag</h2>
+              <h1 #value>Value: {{content}}</h1>
+              <!-- <h2>Value: h2 tag</h2>
               <h3 class="myClass">Value: h3</h3>
               <h4 id="myId">Value: h4 tag</h4>
               <h5>Value: h5 tag</h5>
               <h5>Value: h5 tag 2</h5>
               <div myAttr>This is my this tag</div>
               <span course="Angular">This is my this tag Angular 4</span>
-              <p handsome demo>You are HandSome</p>
+              <p handsome demo>You are HandSome</p> -->
             </app-order-lifecycle>
+            <input type="text" class="form-control" #text>
+            <button 
+              type="button" 
+              class="btn btn-danger" 
+              [style.margin-top.px]="10"
+              (click)="onClick(text.value)"
+            >Click me!</button>
           </div>
       </div>
     </div>

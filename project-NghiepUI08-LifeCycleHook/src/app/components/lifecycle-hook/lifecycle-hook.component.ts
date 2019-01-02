@@ -24,19 +24,19 @@ export class LifecycleHookComponent implements OnInit,OnDestroy,OnChanges,DoChec
   }
 
   ngOnInit() {
-    console.log('ngOnInit: LifeCycleHook');
+    //console.log('ngOnInit: LifeCycleHook');
   }
 
   ngOnDestroy(){
-    console.log('Destroy');
+    //console.log('Destroy');
   }
 
   ngOnChanges(simpleChanges: SimpleChanges) {
-    console.log('ngOnchange');
+    //console.log('ngOnchange');
     this.previousTotal = simpleChanges.total.previousValue;
   }
 
   ngDoCheck(){
-    console.log('DoCheck');
+    //console.log('DoCheck');
   }
 }
