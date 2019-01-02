@@ -23,13 +23,13 @@ export class OrderLifecycleComponent implements OnInit,AfterContentInit,AfterCon
   }
 
   ngAfterContentInit(){
-    console.log(this.value);
-    console.log('ngAfterContentInit');
+    // console.log(this.value);
+    // console.log('ngAfterContentInit');
   }
 
   ngAfterContentChecked(){
-    console.log(this.value.nativeElement.innerText);
-    console.log('ngAfterContentChecked');
+    // console.log(this.value.nativeElement.innerText);
+    // console.log('ngAfterContentChecked');
   }
 
 }
