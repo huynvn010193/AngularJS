@@ -1,4 +1,4 @@
-import { Component,AfterViewInit,AfterViewChecked } from '@angular/core';
+import { Component,AfterViewInit,AfterViewChecked, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,8 @@ import { Component,AfterViewInit,AfterViewChecked } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit,AfterViewChecked {
+  @ViewChild('arrProductAfter') arrProductAfter;
+
   title = 'App Component';
   public isShowing : boolean = true;
   public total : number = 0;
@@ -41,9 +43,15 @@ export class AppComponent implements AfterViewInit,AfterViewChecked {
 
   ngAfterViewInit(){
     console.log('ngAfterViewInit');
+    //console.log(this.arrProductAfter);
   }
 
   ngAfterViewChecked(){
     console.log('ngAfterViewChecked');
+    console.log(this.arrProductAfter);
+  }
+
+  addProduct(value){
+    this.products.push(value);
   }
 }
