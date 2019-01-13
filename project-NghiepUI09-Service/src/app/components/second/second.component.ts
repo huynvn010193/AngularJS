@@ -12,4 +12,11 @@ export class SecondComponent implements OnInit {
   ngOnInit() {
   }
 
+  click() {
+    this.login();
+  }
+
+  login() : void {
+    console.log("Hello");
+  }
 }

@@ -12,4 +12,12 @@ export class FirstComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick() {
+    this.login();
+  }
+
+  login() : void {
+    console.log("Hello");
+  }
+
 }
