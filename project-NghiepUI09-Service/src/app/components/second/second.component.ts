@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from './../../services/login.service';
 
 @Component({
   selector: 'app-second',
@@ -6,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./second.component.css']
 })
 export class SecondComponent implements OnInit {
+  private _loggingService : LoginService;
 
-  constructor() { }
+  constructor(_loggingService : LoginService) { 
+    this._loggingService = _loggingService;
+  }
 
   ngOnInit() {
   }
 
   click() {
-    this.login();
+    this._loggingService.logging();
   }
 
-  login() : void {
-    console.log("Hello");
-  }
 }

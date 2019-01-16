@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from './../../services/login.service';
 
 @Component({
   selector: 'app-first',
@@ -7,17 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _loggingService : LoginService
+  ) {
+  }
 
   ngOnInit() {
   }
 
   onClick() {
-    this.login();
+    this._loggingService.logging();
   }
 
-  login() : void {
-    console.log("Hello");
-  }
+  // login() : void {
+  //   console.log("Hello");
+  // }
 
 }
