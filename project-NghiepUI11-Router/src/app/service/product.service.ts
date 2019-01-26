@@ -43,7 +43,7 @@ export class ProductService {
     let result = null;
     for (var i = 0; i < this.products.length; i++){
       if(this.products[i].id == id){
-        result = this.products[i].id;
+        result = this.products[i];
         break;
       }
     }

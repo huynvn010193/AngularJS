@@ -3,6 +3,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const appRoutes : Routes = [
@@ -26,6 +27,10 @@ export const appRoutes : Routes = [
   {
     path:'products',
     component : ProductsComponent
+  },
+  {
+    path:'products/:id',
+    component : ProductDetailComponent
   },
   {
     path : '**',

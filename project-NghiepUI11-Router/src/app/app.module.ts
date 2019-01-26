@@ -13,6 +13,7 @@ import { appRoutes } from './app.router';
 
 // Khai báo Service
 import { ProductService } from './service/product.service';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductService } from './service/product.service';
     ContactComponent,
     HomeComponent,
     NotFoundComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
