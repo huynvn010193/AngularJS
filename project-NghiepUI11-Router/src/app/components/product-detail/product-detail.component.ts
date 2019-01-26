@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from './../../models/product.class';
 import { ProductService } from './../../service/product.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,7 +12,7 @@ import { ProductService } from './../../service/product.service';
 export class ProductDetailComponent implements OnInit {
 
   public product: Product = null;
-
+  public subscription : Subscription;
   constructor(
     public activatedRoute : ActivatedRoute,
     public productService : ProductService
@@ -23,15 +24,21 @@ export class ProductDetailComponent implements OnInit {
   }
 
   handleParams(){
-    let id = (+this.activatedRoute.params.subscribe(data =>{
+    this.subscription = this.activatedRoute.params.subscribe(data =>{
       let id = data.id;
       this.product = this.productService.getProductById(id);
-    }))
+    })
   }
 
   handleParamsRouteBySnapshot(){
     // Thêm dấu (+) => Chuyển id về số => tránh lỗi xảy ra.
     let id = (+this.activatedRoute.snapshot.params['id']);
     this.product = this.productService.getProductById(id);
+  }
+
+  ngOnDestroy(){
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
   }
 }
