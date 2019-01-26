@@ -14,4 +14,13 @@
   </div>
 </div>
 <hr/>
+<!-- <button type="button" class="btn btn-primary" [style.margin-left.px]="5" [routerLink]="['/index']">Home</button>
+<button type="button" class="btn btn-primary" [style.margin-left.px]="5" [routerLink]="['/contact']">Contact</button>
+<button type="button" class="btn btn-primary" [style.margin-left.px]="5" [routerLink]="['/about']">About</button> -->
+
+<button type="button" class="btn btn-primary" [style.margin-left.px]="5" (click)="navigate('index')">Home</button>
+<button type="button" class="btn btn-primary" [style.margin-left.px]="5" (click)="navigate('contact')">Contact</button>
+<button type="button" class="btn btn-primary" [style.margin-left.px]="5" (click)="navigate('about')">About</button>
+
+<hr/>
 <h1>Footer</h1>
