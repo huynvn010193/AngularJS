@@ -12,10 +12,9 @@ export class AppComponent {
   constructor(
     public routerService : Router
   ){}
-  
+
   navigate(url : string){
     //this.routerService.navigate([url]);
     this.routerService.navigateByUrl(url);
   }
 }
-
