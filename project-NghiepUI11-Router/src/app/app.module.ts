@@ -13,6 +13,7 @@ import { appRoutes } from './app.router';
 
 // Khai báo Service
 import { ProductService } from './service/product.service';
+import { FormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ProductService],
