@@ -45,6 +45,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onBackToList(){
-    this.routerService.navigate(['products/list']);
+    // this.routerService.navigate(['products/list']);
+    // relativeTo: thay vì truyền đường dẫn chích xác thì truyền ntn !!
+    this.routerService.navigate(['list'],{
+      relativeTo : this.activatedRoute.parent
+    });
   }
 }
