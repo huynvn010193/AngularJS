@@ -15,6 +15,7 @@ import { appRoutes } from './app.router';
 import { ProductService } from './service/product.service';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     HomeComponent,
     NotFoundComponent,
     ProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

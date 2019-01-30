@@ -1,8 +1,9 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { Product } from './../../models/product.class';
 import { ProductService } from './../../service/product.service';
 import { Subscription } from 'rxjs/Subscription';
+
 
 @Component({
   selector: 'app-product-detail',
@@ -15,7 +16,8 @@ export class ProductDetailComponent implements OnInit {
   public subscription : Subscription;
   constructor(
     public activatedRoute : ActivatedRoute,
-    public productService : ProductService
+    public productService : ProductService,
+    public routerService : Router
   ) { }
 
   ngOnInit() {
@@ -40,5 +42,9 @@ export class ProductDetailComponent implements OnInit {
     if(this.subscription){
       this.subscription.unsubscribe();
     }
+  }
+
+  onBackToList(){
+    this.routerService.navigate(['products/list']);
   }
 }
