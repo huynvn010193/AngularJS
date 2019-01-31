@@ -29,6 +29,7 @@ export class ProductDetailComponent implements OnInit {
     this.subscription = this.activatedRoute.params.subscribe(data =>{
       let id = data.id;
       this.product = this.productService.getProductById(id);
+      console.log(this.product);
     })
   }
 
@@ -48,6 +49,12 @@ export class ProductDetailComponent implements OnInit {
     // this.routerService.navigate(['products/list']);
     // relativeTo: thay vì truyền đường dẫn chích xác thì truyền ntn !!
     this.routerService.navigate(['list'],{
+      relativeTo : this.activatedRoute.parent
+    });
+  }
+
+  onEdit(){
+    this.routerService.navigate(['edit'],{
       relativeTo : this.activatedRoute.parent
     });
   }
