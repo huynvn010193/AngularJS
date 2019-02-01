@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit,OnDestroy {
   }
 
   onSearch(){
-    this.routerService.navigate(['/products'],{queryParams: { name: this.name ? this.name : '', price:this.price ? this.price : '' }});
+    this.routerService.navigate(['/products/list'],{queryParams: { name: this.name ? this.name : '', price:this.price ? this.price : '' }});
   }
 
 }

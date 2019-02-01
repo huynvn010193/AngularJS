@@ -7,7 +7,7 @@
       class="btn btn-primary"
       [style.margin-top.px]="10"
       [style.margin-bottom.px]="10"
-      [routerLink]="['/products']"
+      [routerLink]="['/products/list']"
       [queryParams]="{name : name ? name : '',price : price ? price : ''}"
     >Search</button>
     <button 
@@ -16,7 +16,7 @@
       [style.margin-top.px]="10"
       [style.margin-bottom.px]="10"
       [style.margin-left.px]="10"
-      [routerLink]="['/products']"
+      [routerLink]="['/products/list']"
       (click)="onSearch()"
     >Search(query params component)</button>
   </div>

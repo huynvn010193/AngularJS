@@ -21,7 +21,6 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.handleParamsRouteBySnapshot();
     this.handleParams();
   }
 
@@ -29,7 +28,6 @@ export class ProductDetailComponent implements OnInit {
     this.subscription = this.activatedRoute.params.subscribe(data =>{
       let id = data.id;
       this.product = this.productService.getProductById(id);
-      console.log(this.product);
     })
   }
 
@@ -54,7 +52,11 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onEdit(){
-    this.routerService.navigate(['edit'],{
+     // Cách 1:
+    // this.routerService.navigate([`edit/${this.product.id}`],{
+    //   relativeTo : this.activatedRoute.parent
+    // });
+    this.routerService.navigate([`edit`,this.product.id],{
       relativeTo : this.activatedRoute.parent
     });
   }
