@@ -27,28 +27,23 @@ export const appRoutes : Routes = [
     component : ContactComponent
   },
   {
-    path:'products',
+    path:'product/:id',
     component: ProductsComponent,
     children: [
       {
         path: '',
-        redirectTo: '/products/list',
-        pathMatch : 'full'
-      },
-      {
-        path: 'list',
-        component: ProductListComponent
-      },
-      {
-        path: ':id',
         component: ProductDetailComponent
       },
       {
-        path: 'edit/:id',
+        path: 'edit',
         component: ProductEditComponent
       },
     ]
   },
+  {
+    path: 'products',
+    component: ProductListComponent,
+  }
   // {
   //   path:'products/:id',
   //   component : ProductDetailComponent

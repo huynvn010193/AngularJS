@@ -4,7 +4,6 @@ import { Product } from './../../models/product.class';
 import { ProductService } from './../../service/product.service';
 import { Subscription } from 'rxjs/Subscription';
 
-
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -46,9 +45,7 @@ export class ProductDetailComponent implements OnInit {
   onBackToList(){
     // this.routerService.navigate(['products/list']);
     // relativeTo: thay vì truyền đường dẫn chích xác thì truyền ntn !!
-    this.routerService.navigate(['list'],{
-      relativeTo : this.activatedRoute.parent
-    });
+    this.routerService.navigate(['products']);
   }
 
   onEdit(){
@@ -56,7 +53,7 @@ export class ProductDetailComponent implements OnInit {
     // this.routerService.navigate([`edit/${this.product.id}`],{
     //   relativeTo : this.activatedRoute.parent
     // });
-    this.routerService.navigate([`edit`,this.product.id],{
+    this.routerService.navigate(['edit'],{
       relativeTo : this.activatedRoute.parent
     });
   }
