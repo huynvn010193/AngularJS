@@ -21,7 +21,13 @@
           <a [routerLink]="['/about']">About</a>
         </li>
         <li routerLinkActive="active">
+          <a [routerLink]="['/login']">Login</a>
+        </li>
+        <li routerLinkActive="active">
           <a [routerLink]="['/products']">Products</a>
+        </li>
+        <li routerLinkActive="active">
+          <a (click)="logout()">Logout</a>
         </li>
       </ul>
     </div>

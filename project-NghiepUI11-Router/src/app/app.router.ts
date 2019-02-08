@@ -7,6 +7,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './service/guards/auth.guard';
 
 export const appRoutes : Routes = [
   {
@@ -29,10 +31,12 @@ export const appRoutes : Routes = [
   {
     path: 'products',
     component: ProductListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:'product/:id',
     component: ProductsComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -43,6 +47,10 @@ export const appRoutes : Routes = [
         component: ProductEditComponent
       },
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   // {
   //   path:'products/:id',
