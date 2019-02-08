@@ -27,6 +27,10 @@ export const appRoutes : Routes = [
     component : ContactComponent
   },
   {
+    path: 'products',
+    component: ProductListComponent,
+  },
+  {
     path:'product/:id',
     component: ProductsComponent,
     children: [
@@ -40,10 +44,6 @@ export const appRoutes : Routes = [
       },
     ]
   },
-  {
-    path: 'products',
-    component: ProductListComponent,
-  }
   // {
   //   path:'products/:id',
   //   component : ProductDetailComponent
