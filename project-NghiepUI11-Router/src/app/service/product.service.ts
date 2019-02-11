@@ -44,7 +44,6 @@ export class ProductService {
       });
     }
     if(price){
-      debugger
       result = this.products.filter(x => {
         return x.price == price;
       });
