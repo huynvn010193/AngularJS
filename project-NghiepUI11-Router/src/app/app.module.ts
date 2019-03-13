@@ -21,6 +21,7 @@ import { ProductService } from './service/product.service';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './service/guards/auth.guard';
 import { AccessGuard } from './service/guards/access.guard';
+import { ModuleComponent } from './product-management/module/module.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AccessGuard } from './service/guards/access.guard';
     ProductDetailComponent,
     ProductListComponent,
     ProductEditComponent,
-    LoginComponent
+    LoginComponent,
+    ModuleComponent
   ],
   imports: [
     BrowserModule,
