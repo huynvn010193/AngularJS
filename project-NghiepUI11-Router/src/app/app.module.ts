@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductService } from './service/product.service';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './service/guards/auth.guard';
+import { AccessGuard } from './service/guards/access.guard';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AuthGuard } from './service/guards/auth.guard';
   ],
   providers: [
     ProductService,
-    AuthGuard
+    AuthGuard,
+    AccessGuard
   ],
   bootstrap: [AppComponent]
 })

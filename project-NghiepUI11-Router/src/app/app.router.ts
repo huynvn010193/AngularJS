@@ -9,6 +9,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './service/guards/auth.guard';
+import { AccessGuard } from './service/guards/access.guard';
 
 export const appRoutes : Routes = [
   {
@@ -18,6 +19,7 @@ export const appRoutes : Routes = [
   },
   {
     path : 'index',
+    canDeactivate: [AccessGuard],
     component : HomeComponent
   },
   {
