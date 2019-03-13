@@ -44,7 +44,6 @@ export class ProductService {
       });
     }
     if(price){
-      debugger
       result = this.products.filter(x => {
         return x.price == price;
       });
@@ -53,6 +52,7 @@ export class ProductService {
   }
 
   getProductById(id : number){
+    debugger
     let result = null;
     for (var i = 0; i < this.products.length; i++){
       if(this.products[i].id == id){

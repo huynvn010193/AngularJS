@@ -22,6 +22,7 @@ export class ProductListComponent implements OnInit,OnDestroy {
   ) { }
 
   ngOnInit() {
+    debugger
     this.queryParamsSubscription = this.activatedRoute.queryParams.subscribe(data =>{
       let name = data['name'];
       let price = data['price'];

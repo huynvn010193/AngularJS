@@ -35,8 +35,6 @@ export class ProductEditComponent implements OnInit,OnDestroy {
     this.subscription = this.activatedRouteService.parent.params.subscribe((params: Params) => {
       let id = params['id'];
       this.product = this.productService.getProductById(id);
-      console.log(this.product);
     })
   }
-
 }
