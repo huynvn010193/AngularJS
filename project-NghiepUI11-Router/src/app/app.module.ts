@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ProductManagementModule } from './product-management/product-management.module'
 
 // Khai báo Component
 import { AppComponent } from './app.component';
@@ -14,9 +15,8 @@ import { appRoutes } from './app.router';
 import { LoginComponent } from './components/login/login.component';
 
 // Khai báo Service
-import { ProductService } from './service/product.service';
 import { FormsModule } from '@angular/forms';
-import { AuthGuard } from './service/guards/auth.guard';
+
 import { AccessGuard } from './service/guards/access.guard';
 
 @NgModule({
@@ -32,11 +32,10 @@ import { AccessGuard } from './service/guards/access.guard';
   imports: [
     BrowserModule,
     FormsModule,
+    ProductManagementModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    ProductService,
-    AuthGuard,
     AccessGuard
   ],
   bootstrap: [AppComponent]
