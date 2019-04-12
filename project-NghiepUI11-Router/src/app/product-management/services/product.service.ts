@@ -16,7 +16,7 @@ export class ProductService {
     },
     {
       id : 2,
-      name : 'Galaxy S9',
+      name : 'galaxy S9',
       price: 12000000,
       status: false
     },
