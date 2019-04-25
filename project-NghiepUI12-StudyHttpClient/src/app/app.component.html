@@ -17,7 +17,19 @@
 					</tr>
 				</tbody>
 			</table>
-			
+			<hr/>
+			<form>
+				<legend>ADD TODO</legend>
+				<div class="form-group">	
+					<label for="">Title</label>
+					<input type="text" class="form-control" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+				</div>
+				<select class="form-control" [(ngModel)]="completed" [ngModelOptions]="{standalone: true}" [style.margin-bottom.px]="10">
+					<option value="true">Completed</option>
+					<option value="false">InProgress</option>
+				</select>
+				<button type="submit" class="btn btn-primary" (click)="onAddTodo()">Submit</button>
+			</form>
 		</div>
 	</div>
 </div>

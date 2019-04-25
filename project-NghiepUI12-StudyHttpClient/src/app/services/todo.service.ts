@@ -14,4 +14,17 @@ export class TodoService {
   getAllTodos() : Observable<Todo[]>{
     return this.http.get<Todo[]>(this.API);
   }
+
+  addTodos(todo : Todo) : Observable<Todo>{
+    return this.http.post<Todo>(this.API,todo);
+  }
+
+  handleError(err){
+    if(err.error instanceof Error) {
+      console.log(`Client-side error: ${err.error.message}`);
+    } else {
+      console.log(`Server-side error: ${err.status} - ${err.errpr}`);
+    }
+  }
+
 }

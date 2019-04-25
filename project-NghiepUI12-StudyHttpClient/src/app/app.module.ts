@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Khai báo service
 import { TodoService } from './services/todo.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TodoService } from './services/todo.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     TodoService

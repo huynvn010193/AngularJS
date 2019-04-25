@@ -13,6 +13,9 @@ export class AppComponent implements OnInit, OnDestroy{
   public todos : Todo[] = [];
   public subscription : Subscription;
 
+  public title : string;
+  public completed : boolean = false;
+
   constructor(
     public todoService : TodoService
   ){
@@ -23,15 +26,30 @@ export class AppComponent implements OnInit, OnDestroy{
     this.loadData();
   }
 
-  loadData(){
+  loadData(){    
     this.subscription = this.todoService.getAllTodos().subscribe(data => {
       this.todos = data;
     }, error => {
-      console.log(error);
+      this.todoService.handleError(error);
     });
   }
 
-  ngOnDestroy() {
-    
+  onAddTodo() {
+    console.log(`${this.title} - ${this.completed}`);
+    let todo = new Todo(this.title,this.completed);
+    this.subscription = this.todoService.addTodos(todo).subscribe( data => {
+      //console.log(data);
+      this.todos.push(data);
+    }, error => {
+      this.todoService.handleError(error);
+    });
   }
+
+  // Hủy subscription trước khi component bị hủy => Nếu như không hủy thì lúc nào subcription cũng tiếp tục lắng nghe => làm chậm tiến trình. 
+  ngOnDestroy() {
+    if(this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
 }
