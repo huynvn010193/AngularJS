@@ -16,6 +16,8 @@ export class AppComponent implements OnInit, OnDestroy{
   public title : string;
   public completed : boolean = false;
 
+  public todo: Todo = null;
+
   constructor(
     public todoService : TodoService
   ){
@@ -38,8 +40,20 @@ export class AppComponent implements OnInit, OnDestroy{
     console.log(`${this.title} - ${this.completed}`);
     let todo = new Todo(this.title,this.completed);
     this.subscription = this.todoService.addTodos(todo).subscribe( data => {
-      //console.log(data);
       this.todos.push(data);
+    }, error => {
+      this.todoService.handleError(error);
+    });
+  }
+
+  onEditTodo(item : Todo){
+    this.todo = item;
+  }
+
+  onUpdateTodo() {
+    this.subscription = this.todoService.updateTodo(this.todo).subscribe(data => {
+      // Tìm vị trí của tk sau khi update đè lên tk trước update
+      
     }, error => {
       this.todoService.handleError(error);
     });
@@ -51,5 +65,4 @@ export class AppComponent implements OnInit, OnDestroy{
       this.subscription.unsubscribe();
     }
   }
-
 }
