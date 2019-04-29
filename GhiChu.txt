@@ -1,1 +1,6 @@
-123 132231
+json-server --watch db.json
+
+1. Lệnh tạo service : ng g "name service" course --spec false.
+=> Tạo xong service nhớ vô provinder khai báo để sử dụng.
+
+2. Để sử dụng API => Khai báo 1 moudle là http moudle.
