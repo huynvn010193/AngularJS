@@ -8,7 +8,7 @@ import { Course } from './../../models/course.models';
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.css']
 })
-export class CourseListComponent implements OnInit {
+export class CourseListComponent implements OnInit,OnDestroy {
   public subcription : Subscription;
   public courses : Course[] = [];
 
@@ -26,4 +26,13 @@ export class CourseListComponent implements OnInit {
     }
   }
 
+  onDeleteCourse(id : number) {
+    this.subcription = this.courseService.deleteCourse(id).subscribe((data: Course) => {
+      this.courses = this.updataDataAfterDelete(id);
+     })
+  }
+
+  updataDataAfterDelete(id : number) {
+    return this.courses.filter((course) => course.id !== id)
+  }
 }

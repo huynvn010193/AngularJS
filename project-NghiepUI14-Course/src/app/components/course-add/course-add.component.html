@@ -2,17 +2,21 @@
   <legend>ADD COURSES</legend>
   <div class="form-group">
     <label for="">Name</label>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" [(ngModel)]="course.name" [ngModelOptions]="{standalone: true}">
   </div>
   <div class="form-group">
     <label for="">Description</label>
-    <textarea class="form-control" rows="3"></textarea>
+    <textarea class="form-control" rows="3" [(ngModel)]="course.description" [ngModelOptions]="{standalone: true}"></textarea>
   </div>
-  <input type="number" class="form-control">
+  <div class="form-group">   
+    <label for="">Fee</label>
+    <input type="number" class="form-control" [(ngModel)]="course.fee" [ngModelOptions]="{standalone: true}">
+  </div>
 
   <button 
     type="submit" 
     class="btn btn-primary" 
     [style.margin-top.px]="30"
+    (click)="onAddCourse()"
   >SAVE</button>
 </form>

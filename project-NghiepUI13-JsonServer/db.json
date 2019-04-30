@@ -9,14 +9,26 @@
     {
       "id": 2,
       "name": "Android",
-      "description": "For Mobile deverloper",
-      "fee": 5
+      "description": "For Mobile deverloper ALL",
+      "fee": 7
     },
     {
-      "name": "Lập trình IOS",
-      "description": "mobile developer",
-      "fee": "15",
+      "name": "PHP Lavaravel",
+      "description": "PHP Lavaravel",
+      "fee": 12,
       "id": 3
+    },
+    {
+      "name": "Hello world",
+      "description": "Hello world",
+      "fee": 32,
+      "id": 4
+    },
+    {
+      "name": "NodeJS thoi gian thuc",
+      "description": "NodeJS thoi gian thuc",
+      "fee": 12,
+      "id": 6
     }
   ]
 }

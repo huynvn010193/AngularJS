@@ -4,3 +4,9 @@ json-server --watch db.json
 => Tạo xong service nhớ vô provinder khai báo để sử dụng.
 
 2. Để sử dụng API => Khai báo 1 moudle là http moudle.
+
+Muốn router thêm thẻ [routerLink]
+	VD: [routerLink] = "['/courses/add']"
+	
+- Sử dụng ngMoulde phải import FormModule.
+- Lấy tham số trên đường truyền => dùng ActiveRoute
