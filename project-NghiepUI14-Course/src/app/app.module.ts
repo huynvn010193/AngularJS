@@ -27,7 +27,7 @@ const appRoutes: Routes = [
         component: CourseListComponent
       },
       {
-        path: 'id',
+        path: ':id/edit',
         component: CourseEditComponent
       },
       {
