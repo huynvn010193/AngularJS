@@ -10,3 +10,6 @@ Muốn router thêm thẻ [routerLink]
 	
 - Sử dụng ngMoulde phải import FormModule.
 - Lấy tham số trên đường truyền => dùng ActiveRoute
+
+_ Template-driven Forms : thao tác với template => dùng html tạo ra form
+_ Reactive Forms: Dùng code typescript tạo ra form.
