@@ -52,32 +52,50 @@
               [(ngModel)]="user.fullname"
               #fullname="ngModel"
               required="required"
+              minlength="3"
+              maxlength="20"
             >
             <span class="label label-danger"
-              *ngIf="fulname.dirty && fullname.errors?.required"
+              *ngIf="fullname.dirty && fullname.errors?.required"
             >Vui lòng nhập Fullname
             </span>
+            <span class="label label-danger"
+              *ngIf="fullname.errors?.minlength"
+            >Fullname phải có độ dài 3 ký tự
+            </span>
+            <span class="label label-danger"
+              *ngIf="fullname.dirty && fullname.errors?.maxlength"
+            >Fullname phải có độ dài không quá 20 ký tự
+            </span>
           </div>
-          <div class="form-group">
-            <label for="">Email: </label>
-            <input
-              name="txtEmail" 
-              type="text" 
-              class="form-control" 
-              [(ngModel)]="user.email"
-              #email="ngModel"
-            >
+          <div ngModelGroup="contact">
+            <div class="form-group">
+              <label for="">Email: </label>
+              <input
+                name="txtEmail" 
+                type="text" 
+                class="form-control" 
+                [(ngModel)]="user.email"
+                #email="ngModel"
+                pattern="^[a-z][a-z0-9.-_]{1,}@[a-z0-9.-]{2,}[.]{1}[a-zA-Z]{2,}"
+              >
+            </div>
+            <span class="label label-danger"
+                *ngIf="email.dirty && email.errors?.pattern"
+              >Email không đúng định dạng.
+              </span>
+            <div class="form-group">
+              <label for="">Phone: </label>
+              <input
+                name="txtPhone"
+                type="text" 
+                class="form-control" 
+                [(ngModel)]="user.phone" 
+                #phone="ngModel"
+              >
+            </div>
           </div>
-          <div class="form-group">
-            <label for="">Phone: </label>
-            <input
-              name="txtPhone"
-              type="text" 
-              class="form-control" 
-              [(ngModel)]="user.phone" 
-              #phone="ngModel"
-            >
-          </div>
+          
           <button type="submit" class="btn btn-primary" [style.margin-right.px]="10">Save</button>
           <button type="" class="btn btn-primary" (click)="onResetForm(frmUser)">Reset</button>
         </form>

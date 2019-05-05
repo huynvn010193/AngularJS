@@ -17,7 +17,7 @@ export class TemplateFormComponent implements OnInit {
 
   onSubmitForm(frmUser : NgForm) {
     if(frmUser.valid) {
-      console.log('this.user',this.user);
+      console.log('frmUser.value',frmUser.value);
     }
   }
 
