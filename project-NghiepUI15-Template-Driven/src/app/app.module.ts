@@ -3,15 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { DataDrivenFormComponent } from './components/data-driven-form/data-driven-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    DataDrivenFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
