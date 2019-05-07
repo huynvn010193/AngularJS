@@ -25,7 +25,11 @@ export class DataDrivenFormComponent implements OnInit {
         Validators.maxLength(20)
       ]],
       password : ['',[Validators.required]],
-      fullname : [''],
+      fullname : ['',[
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(20)
+      ]],
       email : ['',Validators.pattern('^[a-z][a-z0-9.-_]{1,}@[a-z0-9.-]{2,}[.]{1}[a-zA-Z]{2,}')],
       phone : ['']
     });
